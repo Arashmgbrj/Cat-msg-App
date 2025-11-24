@@ -74,7 +74,7 @@ const Setting = () => {
     const fetchData = async () => {
       try {
         const token = await getBread('token');
-        const response = await axios.post("https://ocrgood.ir/cat/userinfo", { "token": token });
+        const response = await axios.post("https://your_domain/cat/userinfo", { "token": token });
 
         if (response.status === 200) {
           setUserinfo(response.data['result']);
@@ -118,7 +118,7 @@ const Setting = () => {
     setfetchdata(false);
 
     try {
-      const response = await axios.post("https://ocrgood.ir/cat/edituser", userData, {
+      const response = await axios.post("https://your_domain/edituser", userData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
