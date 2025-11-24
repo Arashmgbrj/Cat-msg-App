@@ -62,7 +62,7 @@ export default function App() {
   useEffect(() => {
     const CheckConnection = async () => {
       try {
-        const response = await axios.get("https://ocrgood.ir/cat/");
+        const response = await axios.get("https://your_domain");
         if (response.status === 200) {
           setIsConnect(true);
         } else {
@@ -97,7 +97,7 @@ export default function App() {
       const token = await getBread("token");
       if (token) {
         const response = await axios.post(
-          "https://ocrgood.ir/cat/checktoken",
+          "https://your_domain/checktoken",
           (data = { token: token })
         );
         if (response.status === 200) {
