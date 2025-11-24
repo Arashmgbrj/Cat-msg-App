@@ -38,10 +38,10 @@ export default function MainPage() {
       try {
         const token = await getBread("token");
         setIsLogin(!!token);
-        console.log(`https://ocrgood.ir/cat/getchats/${token}`);
+        console.log(`https://your_domain/cat/getchats/${token}`);
         
         
-        const response = await axios.get(`https://ocrgood.ir/cat/getchats/${token}`);
+        const response = await axios.get(`https://your_domain/cat/getchats/${token}`);
         
         setApiData((prevData) => {
           // اضافه کردن پیام‌های جدید به لیست
@@ -56,7 +56,7 @@ export default function MainPage() {
 
     const checkConnection = async () => {
       try {
-        const response = await axios.get("https://ocrgood.ir/cat/");
+        const response = await axios.get("https://your_domain");
         setIsConnect(response.status === 200);
       } catch {
         setIsConnect(false);
