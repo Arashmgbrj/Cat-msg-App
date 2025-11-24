@@ -16,7 +16,7 @@ export default function Search() {
     setSearchText(text);
     if (text.length > 0) {
       try {
-        const response = await axios.get(`https://ocrgood.ir/cat/finduser/${text}`);
+        const response = await axios.get(`https://your_domain/finduser/${text}`);
         setApiData(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
