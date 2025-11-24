@@ -60,7 +60,7 @@ const Chat = () => {
         const token_re = await getBread("token");
         if (!id || !token_re) return;
 
-        const response = await axios.get(`https://ocrgood.ir/cat/getchatsuser/${token_re}/${id}`);
+        const response = await axios.get(`https://your_domain/cat/getchatsuser/${token_re}/${id}`);
         if (response.status === 200) {
           setchatinfo(response.data['result']);
         } else {
@@ -93,7 +93,7 @@ const Chat = () => {
     }
 
     try {
-      const response = await axios.post("https://ocrgood.ir/cat/addchat", {
+      const response = await axios.post("https://your_domain/cat/addchat", {
         text: message,
         token: token_sender,
         id: recever
