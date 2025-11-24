@@ -51,7 +51,7 @@ export default function Login() {
     if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       // ارسال درخواست به سرور برای ارسال کد تایید
       try {
-        const response = await axios.post("https://ocrgood.ir/cat/adduser", { email });
+        const response = await axios.post("https://your_domain/cat/adduser", { email });
         if (response.status === 201) {
           console.log(response.data);
           
@@ -114,7 +114,7 @@ export default function Login() {
         };
 
         try {
-            const response = await fetch("https://ocrgood.ir/cat/validatecode", {
+            const response = await fetch("https://your_domain/cat/validatecode", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -159,7 +159,7 @@ export default function Login() {
       
      };
     try {
-      const response = await fetch("https://ocrgood.ir/cat/resetcode", {
+      const response = await fetch("https://your_domain/cat/resetcode", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
